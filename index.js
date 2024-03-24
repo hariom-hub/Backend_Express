@@ -13,7 +13,16 @@ app.listen(port, () => {
     console.log(`app is listening on a port ${port}`);
 })
 
-app.listen(port2, () => {
+// app.listen(port2, () => {
 
-    console.log(`app is listening on a port ${port2}`);
-})
+//     console.log(`app is listening on a port ${port2}`);
+// })
+
+app.use((req, res) => {
+
+
+
+    console.log(res);
+    console.log(req);
+    console.log("request received");
+});
