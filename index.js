@@ -64,13 +64,22 @@ app.get("/about", (req, res) => {
     res.send(about);
 });
 
-app.get("/contact",(req,res)=>{
+app.get("/contact", (req, res) => {
 
     res.send(contact);
 });
 
 
-app.get("/file",(req,res)=>{
+app.get("/file", (req, res) => {
 
-    res.sendFile(__dirname+'/index.html');
+    res.sendFile(__dirname + '/index.html');
+});
+
+
+app.get("/:username/:id",(req,res)=>{
+
+    let{userName,id} = req.params;
+
+    let resString = `<h1>Welcome to the page of @${userName,id}!</h1>`;
+    res.send(resString);
 });
