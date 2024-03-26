@@ -75,11 +75,12 @@ app.get("/file", (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
+app.get("/:username/:id", (req, res) => {
 
-app.get("/:username/:id",(req,res)=>{
 
-    let{userName,id} = req.params;
+    let { username, id } = req.params;
 
-    let resString = `<h1>Welcome to the page of @${userName,id}!</h1>`;
-    res.send(resString);
+    let htmlRes = `This is a page for ${username} and id : ${id}`;
+
+    res.send(htmlRes);
 });
